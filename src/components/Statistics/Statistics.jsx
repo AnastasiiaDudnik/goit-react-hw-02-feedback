@@ -1,5 +1,6 @@
 import { Notification } from 'components/Notification/Notification';
 import PropTypes from 'prop-types';
+import { FeedbackList } from './Statistics.styled';
 
 export const Statistics = ({
   state: { good, neutral, bad },
@@ -8,13 +9,13 @@ export const Statistics = ({
 }) => {
   if (totalFeedback) {
     return (
-      <ul>
+      <FeedbackList>
         <li>Good: {good}</li>
         <li>Neutral: {neutral}</li>
         <li>Bad: {bad}</li>
         <li>Total: {totalFeedback}</li>
         <li>Positive feedback: {positiveFeedback}%</li>
-      </ul>
+      </FeedbackList>
     );
   } else {
     return <Notification message="No feedback given" />;
